@@ -1,108 +1,114 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# PP5 - Vape City
 
-Welcome LADCode2021,
+Vape City is an e-commerce site that allows users to order vaping products and paraphernalia as a one off purchase and also subscribe to receive products on a regular basis with a discount for subscribing. As an avid vaper I struggle to find vaping e-commerce platforms with good UX and subscription models that are reliable. This is a problem in the vaping industry as retail vaping products are generally supplied by very small businesses that cannot afford good developers. They also cannot use popular self-build platforms such as Shopify as most ban the setup of vape shops due to the lack of regulation in the vaping space. My goal with this site is to use the skills and knowledge I have learning throughout this course to solve this real-world problem with an e-commerce site that could become a trusted brand with good UX and a reliable subscription model.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+[The live project can be viewed here.]()
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+![](docs/images/ismysiteresponsive_screenshot.png)
 
-## Gitpod Reminders
+# Planning
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+I started this project by setting up a project in GitHub and using agile methodologies to define user stories that would guide me in the development of site. This allowed me to develop the site in small sprints by focusing on one user story at a time. The goal with using this agile methodology was to prevent me becoming overwhelmed with several developments at once. In the past I have tended to flip between front-end UX and back-end application and get lost or overwhelmed trying to code too many things at once.
 
-`python3 -m http.server`
+Please see my initial GitHub issues:
 
-A blue button should appear to click: _Make Public_,
+![](docs/images/plan-flow-diagram.png)
 
-Another blue button should appear to click: _Open Browser_.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+# How to use Vape City
 
-A blue button should appear to click: _Make Public_,
+# Features
 
-Another blue button should appear to click: _Open Browser_.
+## Existing Features
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Future Features
 
-To log into the Heroku toolbelt CLI:
+# Custom Models
+I decided to use Google Sheets as my data model rather than storing data in data model classes. I felt this was more realistic for my imagined purpose as the imagined user is not a programmer. There is possibility with future development that I could take data from the Google Sheet and store that in classes. I would use this especially to be able to develop the functionality for multiple Dealer ID's and sales inputs.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+I have used other objects as temporary data storage such as a dictionary to store the dealer name in a function. This dictionary is then used in the function to access dealer names across multiple functions.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+I have also used pandas to create a dataframe to access and manipulated data when pulling previous sales data from the pay worksheet
 
-------
+# Testing
 
-## Release History
+I have manually tested Pay Calculator in the following ways:
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+* Pass the code through PEP8 linter and confirmed there are no errors
+* Inputted different types of incorrect data into the input fields, i.e. special characters, strings where there should have been integers, negative numbers in sales data, empty inputs etc. And have confirmed no unexpected error messages.
+* Tested the programme in both my GitPod terminal and Code Institute instance of Heroku and the programme runs exactly as expected.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+## Bugs
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+Solved bugs:
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+* Float error 1:
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+In my original function for getting sales data, I hadn't accounted for float values as sales - sales may not always be a integer. I was receiving errors such as:
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+![](docs/images/float-error.png)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+To fix the issue I created a function to check and pass the value if it was a float or an integer and pass an error if it is not:
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+![](docs/images/sales-data-validation-function.png)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+* Float error 2
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+Once I allowed floats to be passed into the programme, I then had to account for them in the functions that calculate dealer and house pay. I did this by getting the function to run a different sum based on int() and float() methods depending on which value was passed. For example in calculating dealer pay, I used the following:
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+![](docs/images/dealer-pay-ifs.png)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Remaining Bugs
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+* No known bugs outstanding in programme
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+## Validator Testing
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+I validated the code in PEP8 and no errors were returned:
 
-------
+![](docs/images/pep8-results.png)
 
-## FAQ about the uptime script
+# Deployment
 
-**Why have you added this script?**
+I followed the following steps to deploy Pay Calculator to Code Institute's instance of Heroku:
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+* Update requirements.txt to include gspread library, Google Auth, pandas and datetime
+* Push requirements.txt to GutHub repository
+* Create new Heroku app
+* Create a config var in app settings for credentials for my Google Sheet
+* Create a config var for PORT 8000 as requested by Code Institute in README.md and lessons
+* Add heroku/python buildpack
+* Add heroku/nodejs buildpack
+* In app deploy tab deploy main branch from GitHub repository manually to check there are no build errors
+* In app deploy deploy main branch to automatic once programme is complete
 
-**How will this affect me?**
+The programme is live [here](https://pp3-pay-calculator.herokuapp.com/).
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+# Technologies Used
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+I used the following technologies:
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+* Hardware: MacBook Pro
+* GitHub
+* GitPod
+* Google Chrome, Firefox and Safari web browsers
+* Gspread library
+* Datatime python module
+* Pandas dataframe library
+* Heroku
 
-**So….?**
+# Credits
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+* Code Institute for the Heroku deployment terminal
+* Code Institute for the instructions and SCOPE details to wire up Google Sheets and gspread
+* Code Institute for various inspirations in functions as commented in function multiline strings in run.py
 
-**Can I opt out?**
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
 
-**Anything more?**
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
 
----
 
-Happy coding!
+
+
+
