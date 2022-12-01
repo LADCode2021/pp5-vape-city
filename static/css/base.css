@@ -29,3 +29,16 @@ body {
 .bg-black {
     background: #000 !important;
 }
+
+.carousel-inner {
+    padding-top: 10px;
+}
+
+.carousel-caption {
+    margin: 5%;
+}
+
+.carousel-inner > .carousel-item > img {
+    width: 640px;
+    height: 360px;
+}
