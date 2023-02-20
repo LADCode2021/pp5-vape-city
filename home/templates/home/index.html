@@ -2,9 +2,8 @@
 {% load static %}
 
 {% block content %}
-<main>
-    
-    <!-- Promotional images carousel with buttons -->
+<section>
+    <!-- Hero section with promotional images carousel -->
     <div class="row bg-white">
         <div class="container-fluid">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -48,5 +47,20 @@
             </div>
         </div>
     </div>
-</main>
+</section>
+
+<section>
+    <!-- Products Section -->
+    {% for product in products %}
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{% static 'media/vape-city-logo.png' %}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{product.name}}</h5>
+          <p class="card-text">{{product.description}}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    {% endfor %}
+
+</section>
 {% endblock %}
