@@ -6,6 +6,8 @@ body {
     font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
+/* Header Section */
+
 .btn-black {
     background: black;
     color: white;
@@ -30,6 +32,8 @@ body {
     background: #000 !important;
 }
 
+/* Hero Section */
+
 .carousel-inner {
     padding-top: 10px;
 }
@@ -41,4 +45,19 @@ body {
 .carousel-inner > .carousel-item > img {
     width: 1600px;
     height: 400px;
+}
+
+/* Home Product Section */
+
+.home-prod-section {
+    background-color: #eee;
+}
+
+.home-prod {
+    margin-top: 3%;
+}
+
+.home-heading {
+    margin-top: 3%;
+    margin-bottom: 3%;
 }
