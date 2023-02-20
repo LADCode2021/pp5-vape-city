@@ -4,7 +4,7 @@ from products.models import Product
 
 def index(request):
     """ A view to return the index page and products"""
-    products = Product.objects.all()
+    products = Product.objects.filter(display_home=True)
     context = {
         'products': products
     }
