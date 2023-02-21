@@ -42,7 +42,7 @@ body {
     margin: 5%;
 }
 
-.carousel-inner > .carousel-item > img {
+.carousel-inner>.carousel-item>img {
     width: 1600px;
     height: 400px;
 }
@@ -54,13 +54,21 @@ body {
 }
 
 .home-prod {
-    margin-top: 3%;
+    margin-top: 2%;
 }
 
 .home-heading {
     margin-top: 3%;
     margin-bottom: 3%;
 }
+
+.center {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0 0 -50px;
 
 @media (min-width: 1200px) {
     .container {
