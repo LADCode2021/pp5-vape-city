@@ -100,7 +100,7 @@
                             </div>
                         </div>
                         <div class="btn btn-prod-black border-black">
-                            <a href="#" class="stretched-link">Shop now</a>
+                            <a href="{% url 'product_detail' product.id %}" class="stretched-link">Shop now</a>
                         </div>
                     </div>
                 </div>
@@ -108,11 +108,11 @@
             {% endfor %}
             <div class="home-prod col-md-6 col-lg-4 mb-4 mb-md-0">
                 <div class="card h-100">
-                    <a href="#" class="stretched-link"></a>
+                    <a href="{% url 'products' %}?filter=category&category=disposable_vape" class="stretched-link"></a>
                     <div class="card-body">
                         <div class="d-flex center">
                             <div class="btn btn-prod-black">
-                                <a href="#" class="">Shop All Disposables</a>
+                                <a href="{% url 'products' %}?filter=category&category=disposable_vape" class="">Shop All Disposables</a>
                             </div>
                         </div>
                     </div>
