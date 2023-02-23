@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category, Flavour, Strength
+from .models import Product, Category, Variation
 
 # Register your models here.
 
@@ -25,5 +25,4 @@ class CategoryAdmin(admin.ModelAdmin):
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
-admin.site.register(Flavour)
-admin.site.register(Strength)
+admin.site.register(Variation)
