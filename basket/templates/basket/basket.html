@@ -159,7 +159,7 @@
     $('.remove-item').click(function (e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
-        var flavour = $(this).data('flavour');
+        var flavour = $(this).data('product_flavour');
         var url = `/basket/remove/${itemId}`;
         var data = {
             'csrfmiddlewaretoken': csrfToken,
