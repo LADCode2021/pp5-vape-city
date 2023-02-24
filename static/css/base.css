@@ -114,6 +114,22 @@ div .btn a:focus {
     display: block;
 }
 
+/* Basket */
+
+.btt-button {
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.btt-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
 /*--------------------------------------------------------------
   # Footer - Reused from PP4-Burger-Bar
   --------------------------------------------------------------*/
