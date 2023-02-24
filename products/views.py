@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
-from .models import Product, Category
+from .models import Product, Category, Variation
 
 
 def all_products(request):
@@ -61,9 +61,11 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
+    variations = Variation.objects.all()
 
     context = {
         'product': product,
+        'variations': variations
     }
 
     return render(request, 'products/product_detail.html', context)
