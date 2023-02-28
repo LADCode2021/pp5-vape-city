@@ -25,7 +25,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+# DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = True
 
 ALLOWED_HOSTS = ['pp5-vape-city.herokuapp.com', 'localhost']
 
@@ -118,8 +119,6 @@ LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'pp5_vape_city.wsgi.application'
-
-# DATABASES = {'default': dj_database_url.parse('postgres://sioqofox:MBbw4YD7kAetCVQM_CjFs9bAlkLrjvK5@mel.db.elephantsql.com/sioqofox')}
 
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
