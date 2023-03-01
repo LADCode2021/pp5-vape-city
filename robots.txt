@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://pp5-vape-city.herokuapp.com/sitemap.xml
