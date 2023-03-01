@@ -1,11 +1,12 @@
-# THIS PROJECT IS UNFINISHED. I AM VERY FAR BEHIND ON THE COURSE BUT I HAVE TO SUBMIT SOMETHING BY THE DEADLINE DATE TO AVOID HEFTY LATE SUBMISSION FEES. PLEASE ACCEPT MY APOLOGIES FOR WASTING YOUR TIME TRYING TO ASSESS THIS.
+# THIS PROJECT IS UNFINISHED. I AM WAITING TO HEAR BACK ON AN EXTENSION. I AM SUBMITTING JUST IN CASE.
 
 # PP5 - Vape City
 
-Vape City is an e-commerce site that allows users to order vaping products and paraphernalia as a one off purchase and also subscribe to receive products on a regular basis with a discount for subscribing. As an avid vaper I struggle to find vaping e-commerce platforms with good UX and subscription models that are reliable. This is a problem in the vaping industry as retail vaping products are generally supplied by very small businesses that cannot afford good developers. They also cannot use popular self-build platforms such as Shopify as most ban the setup of vape shops due to the lack of regulation in the vaping space. My goal with this site is to use the skills and knowledge I have learning throughout this course to solve this real-world problem with an e-commerce site that could become a trusted brand with good UX and a reliable subscription model.
+Vape City is an e-commerce site that allows users to order vaping products, create accounts to view order history, sign-up to newsletters and contact the store. As an avid vaper I struggle to find vaping e-commerce platforms with good UX that are reliable. This is a problem in the vaping industry as retail vaping products are generally supplied by very small businesses that cannot afford good developers. They also cannot use popular self-build platforms such as Shopify as most ban the setup of vape shops due to the lack of regulation in the vaping space. My goal with this site is to use the skills and knowledge I have learning throughout this course to solve this real-world problem with an e-commerce site that could become a trusted brand with good UX and a reliable store.
 
 [The live project can be viewed here.](https://pp5-vape-city.herokuapp.com/)
 
+![](docs/images/ismysiteresponsive-screenshot.png)
 
 # Planning
 
@@ -16,25 +17,63 @@ Please see my initial GitHub issues:
 ![](docs/images/to-do-list-screenshot.png)
 
 
-# How to use Vape City
-
 # Features
 
 ## Existing Features
 
 ## Future Features
 
+# Business Model
+
 # Custom Models
 
 # Testing
 
-## Bugs
+## Manual Testing
+
+### Test Navigation
+
+### Contact Form Tests
+
+### Registration Form Tests
+
+* Test Registration form submits
+
+* Test empty values in all fields
+
+I tested all fields individually as empty fields and all fields raised an error asking the user to fill in the field.
+
+* Test valid email address
+
+I tested whether the field would allow me to enter an incorrect email. It didn't let me and asked me please enter '@' in an email address.
+
+* Test existing account
+
+I tried to create an account with existing email address and it raised an error telling me a user with that name already exists.
+
+### Login Form Tests
+
+* Test empty values in all fields
+
+* Test valid email address
+
+* Test incorrect password
+
+
+## CRUD Operation Tests
+
+## Automated Testing
 
 ## Remaining Bugs
 
 ## Validator Testing
 
+I validated views.py, models.py and forms.py in Code Institute PEP8 Linter (https://pep8ci.herokuapp.com/) and no errors were returned.
+
 # Deployment
+
+I followed the following steps to deploy my app to Heroku (these are based on the lessons from Hello Django walkthrough):
+
 
 # Technologies Used
 
@@ -44,12 +83,43 @@ I used the following technologies:
 * GitHub
 * GitPod
 * Google Chrome, Firefox and Safari web browsers
+* Django
 * Heroku
+* Amazon AWS
+* ElephantSQL
+* Stripe
+
+# Packages/Libraries used
+
+* asgiref==3.5.2
+* boto3==1.26.29
+* botocore==1.29.29
+* crispy-bootstrap4==2022.1
+* dj-database-url==0.5.0
+* Django==3.2
+* django-allauth==0.41.0
+* django-countries==7.2.1
+* django-crispy-forms==2.0
+* django-storages==1.13.1
+* gunicorn==20.1.0
+* jmespath==1.0.1
+* oauthlib==3.2.2
+* Pillow==9.3.0
+* psycopg2==2.9.5
+* python3-openid==3.2.0
+* pytz==2022.6
+* requests-oauthlib==1.3.1
+* s3transfer==0.6.0
+* sqlparse==0.4.3
+* stripe==5.2.0
 
 # Credits
 
-* Code Institute for multiple setups commented in code
+* Site based on Boutique Ado walkthrough project
 
+* Image credits in image alt text
+
+* Code Institute lesson content adapted in some areas.
 
 
 
