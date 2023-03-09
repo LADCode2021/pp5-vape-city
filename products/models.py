@@ -1,4 +1,5 @@
 from django.db import models
+import uuid
 
 
 class Category(models.Model):
@@ -15,15 +16,26 @@ class Category(models.Model):
         return self.friendly_name
 
 
-class Variation(models.Model):
+class Flavour(models.Model):
+    flavour_id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     product = models.ForeignKey(
         'Product', null=True, blank=True, on_delete=models.SET_NULL
         )
     flavour = models.CharField(max_length=254, null=True, blank=True)
+
+    def __str__(self):
+        return str(self.product) + " | " + self.flavour
+
+
+class Strength(models.Model):
+    strength_id = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    product = models.ForeignKey(
+        'Product', null=True, blank=True, on_delete=models.SET_NULL
+        )
     strength = models.CharField(max_length=254, null=True, blank=True)
 
     def __str__(self):
-        return str(self.product) + " | " + self.flavour + " | " + self.strength
+        return str(self.product) + " | " + self.strength
 
 
 class Product(models.Model):

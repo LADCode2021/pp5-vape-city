@@ -16,8 +16,18 @@ def add_to_basket(request, item_id):
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     flavour = None
+    strength = None
+
+    if 'product_flavour' and 'product_strength' in request.POST:
+        flavour_id = request.POST['product_flavour_id']
+        strength_id = request.POST['product_strength_id']
+        item = f'{item_id}_{flavour_id}_{strength_id}'
+        print(item)
+
     if 'product_flavour' in request.POST:
         flavour = request.POST['product_flavour']
+    if 'product_strength' in request.POST:
+        strength = request.POST['product_strength']
     basket = request.session.get('basket', {})
 
     if flavour:
@@ -40,6 +50,7 @@ def add_to_basket(request, item_id):
             messages.success(request, f'Added {product.name} to your basket')
 
     request.session['basket'] = basket
+    print(basket)
     return redirect(redirect_url)
 
 

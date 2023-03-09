@@ -52,12 +52,37 @@
                         <div class="col-12">
                             <p><strong>Flavour:</strong></p>
                             <select class="form-control rounded-0 w-50" name="product_flavour" id='id_product_flavour'>
-                                {% for variation in variations %}
-                                <option value="{{ variation.flavour }}">{{ variation.flavour }}</option>
+                                {% for flavour in flavours %}
+                                <option value="{{ flavour.flavour }}">{{ flavour.flavour }}</option>
+                                {% endfor %}
+                            </select>
+
+                            <select class="form-control rounded-0 w-50" name="product_flavour_id" id='flavour_id' hidden>
+                                {% for flavour in flavours %}
+                                <option value="{{ flavour.flavour_id }}" hidden>{{ flavour.flavour_id }}</option>
                                 {% endfor %}
                             </select>
                         </div>
                         {% endif %}
+
+                        {% if product.has_strength %}
+                        <div class="col-12">
+                            <p class="mt-3"><strong>Strength:</strong></p>
+                            <select class="form-control rounded-0 w-50" name="product_strength" id='id_product_strength'>
+                                {% for strength in strengths %}
+                                <option value="{{ strength.strength }}">{{ strength.strength }}</option>
+                                {% endfor %}
+                            </select>
+
+                            <select class="form-control rounded-0 w-50" name="product_strength_id" id='strength_id' hidden>
+                                {% for strength in strengths %}
+                                <option value="{{ strength.strength_id }}">{{ strength.strength_id }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        {% endif %}
+
+                        <option value="{{strength.id}}" hidden>{{ strength.id }}</option>
 
                         <div class="col-12">
                             <p class="mt-3"><strong>Quantity:</strong></p>

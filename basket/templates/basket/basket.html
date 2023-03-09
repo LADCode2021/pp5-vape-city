@@ -55,6 +55,9 @@
                             <p class="my-0"><strong>Flavour:
                                 </strong>{% if item.product.has_flavours %}{{ item.flavour|upper }}{% else %}N/A{% endif %}
                             </p>
+                            <p class="my-0"><strong>Strength:
+                            </strong>{% if item.product.has_strength %}{{ item.strength|upper }}{% else %}N/A{% endif %}
+                        </p>
                             <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
                         </td>
                         <td class="py-3">
