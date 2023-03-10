@@ -69,12 +69,15 @@ def checkout(request):
                         )
                         order_line_item.save()
                     else:
-                        for flavour, quantity in item_data['items_by_flavour'].items():
+                        for item, quantity in item_data['items_by_variation'].items():
+                            flavour = item.split('_')[1]
+                            strength = item.split('_')[2]
                             order_line_item = OrderLineItem(
                                 order=order,
                                 product=product,
                                 quantity=quantity,
                                 product_flavour=flavour,
+                                product_strength=strength,
                             )
                             order_line_item.save()
                 except Product.DoesNotExist:

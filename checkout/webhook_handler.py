@@ -137,12 +137,13 @@ class StripeWH_Handler:
                         )
                         order_line_item.save()
                     else:
-                        for flavour, quantity in item_data['items_by_flavour'].items():
+                        for item, quantity in item_data['items_by_variation'].items():
                             order_line_item = OrderLineItem(
                                 order=order,
                                 product=product,
                                 quantity=quantity,
                                 product_flavour=flavour,
+                                product_strength=strength,
                             )
                             order_line_item.save()
             except Exception as e:

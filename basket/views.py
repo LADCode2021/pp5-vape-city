@@ -15,19 +15,12 @@ def add_to_basket(request, item_id):
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
-    flavour = None
-    strength = None
-    item = None
 
+    item = None
     if 'product_flavour' and 'product_strength' in request.POST:
         flavour = request.POST['product_flavour']
         strength = request.POST['product_strength']
         item = f'{item_id}_{flavour}_{strength}'
-
-    if 'product_flavour' in request.POST:
-        flavour = request.POST['product_flavour']
-    if 'product_strength' in request.POST:
-        strength = request.POST['product_strength']
     basket = request.session.get('basket', {})
 
     if item:
@@ -59,18 +52,20 @@ def adjust_basket(request, item_id):
 
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
-    flavour = None
-    if 'product_flavour' in request.POST:
+    item = None
+    if 'product_flavour' and 'product_strength' in request.POST:
         flavour = request.POST['product_flavour']
+        strength = request.POST['product_strength']
+        item = f'{item_id}_{flavour}_{strength}'
     basket = request.session.get('basket', {})
 
-    if flavour:
+    if item:
         if quantity > 0:
-            basket[item_id]['items_by_flavour'][flavour] = quantity
-            messages.success(request, f'Updated {product.name} flavour {flavour.upper()} quantity to {basket[item_id]["items_by_flavour"][flavour]}')
+            basket[item_id]['items_by_variation'][item] = quantity
+            messages.success(request, f'Updated {product.name} flavour {flavour.upper()} quantity to {basket[item_id]["items_by_variation"][item]}')
         else:
-            del basket[item_id]['items_by_flavour'][flavour]
-            if not basket[item_id]['items_by_flavour']:
+            del basket[item_id]['items_by_variation'][item]
+            if not basket[item_id]['items_by_variation']:
                 basket.pop(item_id)
             messages.success(request, f'Removed {product.name} flavour {flavour.upper()} from your basket')
 
@@ -91,14 +86,16 @@ def remove_from_basket(request, item_id):
 
     try:
         product = get_object_or_404(Product, pk=item_id)
-        flavour = None
-        if 'product_flavour' in request.POST:
+        item = None
+        if 'product_flavour' and 'product_strength' in request.POST:
             flavour = request.POST['product_flavour']
+            strength = request.POST['product_strength']
+            item = f'{item_id}_{flavour}_{strength}'
         basket = request.session.get('basket', {})
 
-        if flavour:
-            del basket[item_id]['items_by_flavour'][flavour]
-            if not basket[item_id]['items_by_flavour']:
+        if item:
+            del basket[item_id]['items_by_variation'][item]
+            if not basket[item_id]['items_by_variation']:
                 basket.pop(item_id)
             messages.success(request, (f'Removed 'f'{product.name} flavour {flavour.upper()} from your basket'))
         else:
