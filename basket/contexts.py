@@ -23,7 +23,9 @@ def basket_contents(request):
             })
         else:
             product = get_object_or_404(Product, pk=item_id)
-            for flavour, quantity in item_data['items_by_flavour'].items():
+            for item, quantity in item_data['items_by_variation'].items():
+                flavour = item.split('_')[1]
+                strength = item.split('_')[2]
                 total += quantity * product.price
                 product_count += quantity
                 basket_items.append({
@@ -31,6 +33,7 @@ def basket_contents(request):
                     'quantity': quantity,
                     'product': product,
                     'flavour': flavour,
+                    'strength': strength,
                 })
 
     if total < settings.FREE_DELIVERY_THRESHOLD:

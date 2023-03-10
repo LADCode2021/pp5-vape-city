@@ -57,9 +57,9 @@
                                 {% endfor %}
                             </select>
 
-                            <select class="form-control rounded-0 w-50" name="product_flavour_id" id='flavour_id' hidden>
+                            <select class="form-control rounded-0 w-50" name="product_flavour_id" id='flavour_id'>
                                 {% for flavour in flavours %}
-                                <option value="{{ flavour.flavour_id }}" hidden>{{ flavour.flavour_id }}</option>
+                                <option value="{{ flavour.flavour_id }}">{{ flavour.flavour_id }}</option>
                                 {% endfor %}
                             </select>
                         </div>
@@ -68,13 +68,15 @@
                         {% if product.has_strength %}
                         <div class="col-12">
                             <p class="mt-3"><strong>Strength:</strong></p>
-                            <select class="form-control rounded-0 w-50" name="product_strength" id='id_product_strength'>
+                            <select class="form-control rounded-0 w-50" name="product_strength"
+                                id='id_product_strength'>
                                 {% for strength in strengths %}
                                 <option value="{{ strength.strength }}">{{ strength.strength }}</option>
                                 {% endfor %}
                             </select>
 
-                            <select class="form-control rounded-0 w-50" name="product_strength_id" id='strength_id' hidden>
+                            <select class="form-control rounded-0 w-50" name="product_strength_id" id='strength_id'
+                                hidden>
                                 {% for strength in strengths %}
                                 <option value="{{ strength.strength_id }}">{{ strength.strength_id }}</option>
                                 {% endfor %}
