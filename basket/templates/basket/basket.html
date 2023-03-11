@@ -87,15 +87,16 @@
                                                 </span>
                                             </button>
                                         </div>
-                                        {% if item.product.has_flavours %}
+                                        {% if item.product.has_flavours and item.product.has_strength %}
+                                        <input type="hidden" name="product_item" value="{{ item.item }}">
                                         <input type="hidden" name="product_flavour" value="{{ item.flavour }}">
+                                        <input type="hidden" name="product_strength" value="{{ item.strength }}">
                                         {% endif %}
                                     </div>
                                 </div>
                             </form>
                             <a class="update-link text-info"><small>Update</small></a>
-                            <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"
-                                data-product_flavour="{{ item.flavour }}"><small>Remove</small></a>
+                            <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_item="{{ item.item }}"><small>Remove</small></a>
                         </td>
                         <td class="py-3">
                             <p class="my-0">£{{ item.product.price | calc_subtotal:item.quantity }}</p>
@@ -162,11 +163,11 @@
     $('.remove-item').click(function (e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
-        var flavour = $(this).data('product_flavour');
+        var item = $(this).data('product_item');
         var url = `/basket/remove/${itemId}`;
         var data = {
             'csrfmiddlewaretoken': csrfToken,
-            'product_flavour': flavour
+            'product_item': item
         };
 
         $.post(url, data)

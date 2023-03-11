@@ -53,7 +53,9 @@
                             <p><strong>Flavour:</strong></p>
                             <select class="form-control rounded-0 w-50" name="product_flavour" id='id_product_flavour'>
                                 {% for flavour in flavours %}
+                                {% if product.name == flavour.product.name %}
                                 <option value="{{ flavour.flavour }}">{{ flavour.flavour }}</option>
+                                {% endif %}
                                 {% endfor %}
                             </select>
                         </div>
@@ -65,7 +67,9 @@
                             <select class="form-control rounded-0 w-50" name="product_strength"
                                 id='id_product_strength'>
                                 {% for strength in strengths %}
+                                {% if product.name == strength.product.name %}
                                 <option value="{{ strength.strength }}">{{ strength.strength }}</option>
+                                {% endif %}
                                 {% endfor %}
                             </select>
                         </div>
