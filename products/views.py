@@ -163,7 +163,7 @@ def add_variation(request):
         if form2.is_valid:
             strength = form2.save()
             messages.success(request, 'Successfully added variation!')
-            return redirect(reverse('product_detail', args=[flavour.product.id]))
+            return redirect(reverse('product_detail', args=[strength.product.id]))
         else:
             messages.error(request, 'Failed to add variation. Please ensure the form is valid.')
     else:
