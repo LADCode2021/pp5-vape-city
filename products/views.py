@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .models import Product, Category, Flavour, Strength
-from .forms import ProductForm
+from .forms import ProductForm, FlavourForm, StrengthForm
 
 
 def all_products(request):
@@ -142,3 +142,38 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+@login_required
+def add_variation(request):
+    """ Add a variation to the store """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        form1 = FlavourForm(request.POST, request.FILES)
+        form2 = StrengthForm(request.POST, request.FILES)
+        if form1.is_valid():
+            flavour = form1.save()
+            messages.success(request, 'Successfully added variation!')
+            return redirect(reverse('product_detail', args=[flavour.product.id]))
+        else:
+            messages.error(request, 'Failed to add variation. Please ensure the form is valid.')
+        if form2.is_valid:
+            strength = form2.save()
+            messages.success(request, 'Successfully added variation!')
+            return redirect(reverse('product_detail', args=[flavour.product.id]))
+        else:
+            messages.error(request, 'Failed to add variation. Please ensure the form is valid.')
+    else:
+        form1 = FlavourForm()
+        form2 = StrengthForm()
+
+    template = 'products/add_variation.html'
+    context = {
+        'form1': form1,
+        'form2': form2,
+    }
+
+    return render(request, template, context)
