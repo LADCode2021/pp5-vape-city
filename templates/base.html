@@ -103,8 +103,10 @@
                             <div class="dropdown-menu border-0" aria-labelledby="user-options">
                                 {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                <a href="{% url 'add_product' %}" class="dropdown-item">Product Management - Add Product</a>
-                                <a href="{% url 'add_variation' %}" class="dropdown-item">Product Management - Add Variation</a>
+                                <a href="{% url 'add_product' %}" class="dropdown-item">Product Management - Add
+                                    Product</a>
+                                <a href="{% url 'add_variation' %}" class="dropdown-item">Product Management - Add
+                                    Variation</a>
                                 {% endif %}
                                 <!--<a href="" class="dropdown-item">My Profile</a>-->
                                 <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
@@ -163,20 +165,20 @@
     {% if messages %}
     <div class="message-container">
         {% for message in messages %}
-            {% with message.level as level %}
-                {% if level == 40 %}
-                    {% include 'includes/toasts/toast_error.html' %}
-                {% elif level == 30 %}
-                    {% include 'includes/toasts/toast_warning.html' %}
-                {% elif level == 25 %}
-                    {% include 'includes/toasts/toast_success.html' %}
-                {% else %}
-                    {% include 'includes/toasts/toast_info.html' %}
-                {% endif %}
-            {% endwith %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+        {% include 'includes/toasts/toast_error.html' %}
+        {% elif level == 30 %}
+        {% include 'includes/toasts/toast_warning.html' %}
+        {% elif level == 25 %}
+        {% include 'includes/toasts/toast_success.html' %}
+        {% else %}
+        {% include 'includes/toasts/toast_info.html' %}
+        {% endif %}
+        {% endwith %}
         {% endfor %}
     </div>
-{% endif %}
+    {% endif %}
 
     <main>
         {% if request.path == "/" %}
@@ -241,65 +243,207 @@
         {% endblock %}
     </main>
 
-    <!-- Footer Section - Re-use from PP4-Burger-Bar -->
-    <footer id="footer" class="footer">
+    <!-- Footer Section - Adapted from https://mdbootstrap.com/docs/standard/navigation/footer/-->
 
-        <div class="container">
-            <div class="row gy-3">
-                <div class="col-lg-3 col-md-6 d-flex">
-                    <i class="bi bi-geo-alt icon"></i>
-                    <div>
-                        <h4>Address</h4>
-                        <p>
-                            1 Madeup Street, <br>
-                            Madetown, SP12 4RH<br>
-                        </p>
+    <footer class="bg-dark text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-facebook-f"></i></a>
+
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                        class="fab fa-instagram"></i></a>
+
+                <!-- Section: Social media -->
+            </section>
+
+            <!-- Section: Form -->
+
+            <section class="">
+                <form
+                    action="https://herokuapp.us21.list-manage.com/subscribe/post?u=19a9fec909ffd578bc681d507&amp;id=b000368ad2&amp;f_id=00dcf4e1f0"
+                    method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+                    target="_blank" novalidate>
+                    <!--Grid row-->
+                    <div class="row d-flex justify-content-center">
+                        <!--Grid column-->
+                        <div class="col-auto">
+                            <p class="pt-2">
+                                <strong>Sign up for our newsletter</strong>
+                            </p>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-md-5 col-12">
+                            <!-- Email input -->
+                            <div class="form-outline form-white mb-4">
+                                <input type="email" name="EMAIL" id="mce-EMAIL" class="required email form-control"
+                                    required />
+                                <label for="mce-EMAIL" class="form-label" for="form5Example21"></label>
+                                <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
+                            </div>
+                        </div>
+
+                        <div id="mce-responses" class="clear foot">
+                            <div class="response" id="mce-error-response" style="display:none"></div>
+                            <div class="response" id="mce-success-response" style="display:none"></div>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+
+                        <div class="col-auto">
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-outline-light mb-4">
+                              Subscribe
+                            </button>
+                          </div>
+                        <script type='text/javascript'
+                            src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'>
+                        </script>
+                        <script type='text/javascript'>
+                            (function ($) {
+                                window.fnames = new Array();
+                                window.ftypes = new Array();
+                                fnames[0] = 'EMAIL';
+                                ftypes[0] = 'email';
+                                fnames[1] = 'FNAME';
+                                ftypes[1] = 'text';
+                                fnames[2] = 'LNAME';
+                                ftypes[2] = 'text';
+                                fnames[3] = 'ADDRESS';
+                                ftypes[3] = 'address';
+                                fnames[4] = 'PHONE';
+                                ftypes[4] = 'phone';
+                                fnames[5] = 'BIRTHDAY';
+                                ftypes[5] = 'birthday';
+                            }(jQuery));
+                            var $mcj = jQuery.noConflict(true);
+                        </script>
+                        <!--Grid column-->
                     </div>
+                    <!--Grid row-->
+                </form>
+            </section>
+            <!-- Section: Form -->
 
-                </div>
+            <!-- Section: Text -->
+            <section class="mb-4">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
+                    repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
+                    eum harum corrupti dicta, aliquam sequi voluptate quas.
+                </p>
+            </section>
+            <!-- Section: Text -->
 
-                <div class="col-lg-3 col-md-6 footer-links d-flex">
-                    <i class="bi bi-telephone icon"></i>
-                    <div>
-                        <h4>Reservations</h4>
-                        <p>
-                            <strong>Phone:</strong> 01249 659764<br>
-                            <strong>Email:</strong> contact@example.com<br>
-                        </p>
+            <!-- Section: Links -->
+            <section class="">
+                <!--Grid row-->
+                <div class="row">
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Links</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="#!" class="text-white">Link 1</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 2</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 3</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 4</a>
+                            </li>
+                        </ul>
                     </div>
-                </div>
+                    <!--Grid column-->
 
-                <div class="col-lg-3 col-md-6 footer-links d-flex">
-                    <i class="bi bi-clock icon"></i>
-                    <div>
-                        <h4>Opening Hours</h4>
-                        <p>
-                            <strong>Mon-Sun: 12PM</strong> - 11PM<br>
-                        </p>
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Links</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="#!" class="text-white">Link 1</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 2</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 3</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 4</a>
+                            </li>
+                        </ul>
                     </div>
-                </div>
+                    <!--Grid column-->
 
-                <div class="col-lg-3 col-md-6 footer-links">
-                    <h4>Follow Us</h4>
-                    <div class="social-links d-flex">
-                        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Links</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="#!" class="text-white">Link 1</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 2</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 3</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 4</a>
+                            </li>
+                        </ul>
                     </div>
-                </div>
+                    <!--Grid column-->
 
-            </div>
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Links</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="#!" class="text-white">Link 1</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 2</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 3</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 4</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+            </section>
+            <!-- Section: Links -->
         </div>
+        <!-- Grid container -->
 
-        <div class="container">
-            <div class="copyright">
-                &copy; Copyright <strong><span>Vape City</span></strong>. All Rights Reserved
-            </div>
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2020 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
         </div>
-
+        <!-- Copyright -->
     </footer>
-
+    <!-- Footer -->
 
     {% block postloadjs %}
     <script type="text/javascript">
