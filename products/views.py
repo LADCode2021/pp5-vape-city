@@ -3,7 +3,8 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .models import Product, Category, Flavour, Strength
-from .forms import ProductForm, FlavourForm, StrengthForm
+from .forms import ProductForm, FlavourForm, StrengthForm, CategoryForm
+from django.db.models.functions import Lower
 
 
 def all_products(request):
@@ -85,18 +86,27 @@ def add_product(request):
 
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
+        form2 = CategoryForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save()
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+        if form2.is_valid():
+            category = form2.save()
+            messages.success(request, 'Successfully added category!')
+            return redirect('.')
+        else:
+            messages.error(request, 'Failed to add category. Please ensure the form is valid.')
     else:
         form = ProductForm()
+        form2 = CategoryForm()
 
     template = 'products/add_product.html'
     context = {
         'form': form,
+        'form2': form2,
     }
 
     return render(request, template, context)
