@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'checkout',
     'profiles',
     'storages',
+    'contact',
 
     # Other
     'crispy_bootstrap4',
