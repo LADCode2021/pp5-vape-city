@@ -30,22 +30,22 @@ def add_to_basket(request, item_id):
             if item in basket[item_id]['items_by_variation'].keys():
                 basket[item_id]['items_by_variation'][item] += quantity
                 messages.success(
-                    request, f'Updated {product.name}'
-                    f'flavour {flavour.upper()} quantity to'
+                    request, f'Updated {product.name} '
+                    f'flavour {flavour.upper()} quantity to '
                     f'{basket[item_id]["items_by_variation"][item]}'
                     )
             else:
                 basket[item_id]['items_by_variation'][item] = quantity
                 messages.success(
                     request,
-                    f'Added {product.name}'
+                    f'Added {product.name} '
                     f'flavour {flavour.upper()} to your basket'
                     )
         else:
             basket[item_id] = {'items_by_variation': {item: quantity}}
             messages.success(
                 request,
-                f'Added {product.name}'
+                f'Added {product.name} '
                 f'flavour {flavour.upper()} to your basket'
                 )
     else:
@@ -80,8 +80,9 @@ def adjust_basket(request, item_id):
         if quantity > 0:
             basket[item_id]['items_by_variation'][item] = quantity
             messages.success(
-                request, f'Updated {product.name}'
-                f'flavour {flavour.upper()} quantity to'
+                request, f'Updated {product.name} '
+                f'flavour {flavour.upper()} '
+                f'strength {strength.upper()} quantity to'
                 f'{basket[item_id]["items_by_variation"][item]}'
                 )
         else:
@@ -90,8 +91,9 @@ def adjust_basket(request, item_id):
                 basket.pop(item_id)
             messages.success(
                 request,
-                f'Removed {product.name}'
-                f'flavour {flavour.upper()} from your basket'
+                f'Removed {product.name} '
+                f'flavour {flavour.upper()} '
+                f'{strength.upper()} from your basket'
                 )
     else:
         if quantity > 0:
@@ -129,8 +131,8 @@ def remove_from_basket(request, item_id):
                 basket.pop(item_id)
             messages.success(
                 request,
-                f'Removed 'f'{product.name}'
-                f'Flavour - {flavour.upper()}'
+                f'Removed 'f'{product.name} '
+                f'Flavour - {flavour.upper()} '
                 f'Strength - {strength.upper()} from your basket'
                 )
         else:
