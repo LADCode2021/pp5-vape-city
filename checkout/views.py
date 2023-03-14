@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponse
+    )
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -69,7 +71,8 @@ def checkout(request):
                         )
                         order_line_item.save()
                     else:
-                        for item, quantity in item_data['items_by_variation'].items():
+                        item_data = item_data['items_by_variation'].items()
+                        for item, quantity in item_data:
                             flavour = item.split('_')[1]
                             strength = item.split('_')[2]
                             order_line_item = OrderLineItem(
@@ -82,7 +85,8 @@ def checkout(request):
                             order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your basket wasn't found in our database. "
+                        "One of the products in your basket wasn't found\n"
+                        "in our database."
                         "Please call us for assistance!")
                     )
                     order.delete()
@@ -90,14 +94,18 @@ def checkout(request):
 
             # Save the info to the user's profile if all is well
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(
+                reverse('checkout_success', args=[order.order_number])
+                )
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
         basket = request.session.get('basket', {})
         if not basket:
-            messages.error(request, "There's nothing in your basket at the moment")
+            messages.error(
+                request, "There's nothing in your basket at the moment"
+                )
             return redirect(reverse('products'))
 
         current_basket = basket_contents(request)
@@ -109,7 +117,7 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        # Attempt to prefill the form with any info the user maintains in their profile
+        # Try to prefill the form with any info the user maintains in profile
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)

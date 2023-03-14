@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.validators import MinLengthValidator, EmailValidator
 
+
 class Contact(models.Model):
     """
     Class to define fields for ContactForm and Contact table in db

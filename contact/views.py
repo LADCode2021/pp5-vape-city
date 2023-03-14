@@ -16,7 +16,10 @@ def make_contact(request):
             messages.success(request, 'Successfully made contact')
             return redirect(reverse('make_contact'))
         else:
-            messages.error(request, 'Failed to make contact. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to make contact. Please ensure the form is valid.'
+                )
     else:
         form = ContactForm()
 
