@@ -150,17 +150,21 @@ a.category-badge > span.badge:hover {
 
 .carousel-inner {
     padding-top: 10px;
+    background-color: rgba(222, 199, 199, 0.7) !important;
 }
 
 .carousel-caption {
     margin: 5%;
 }
 
-.carousel-inner>.carousel-item>img {
+.carousel-inner>.carousel-item {
     width: 1600px;
     height: 400px;
 }
 
+.carousel-inner>.carousel-item>div>p {
+    color: #000;
+}
 /* Home Product Section */
 
 .home-prod-section {
@@ -188,7 +192,7 @@ a.category-badge > span.badge:hover {
 /* Card hover css inspired from: https://ordinarycoders.com/blog/article/codepen-bootstrap-card-hovers */
 
 
-/* .card:hover {
+.card:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
 }
@@ -225,7 +229,7 @@ div .btn a:focus {
 .home-prod div .btn {
     margin-top: 16%;
     display: block;
-}  */
+} 
 
 /* Basket */
 

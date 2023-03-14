@@ -89,19 +89,18 @@ def remove_from_basket(request, item_id):
         if 'product_item' in request.POST:
             print('working')
             item = request.POST['product_item']
-            print(item)
         basket = request.session.get('basket', {})
 
         if item:
             del basket[item_id]['items_by_variation'][item]
             print('test 1')
             if not basket[item_id]['items_by_variation']:
+                flavour = item.split('_')[1]
+                strength = item.split('_')[2]
                 basket.pop(item_id)
-                print('test 2')
-            messages.success(request, (f'Removed 'f'{product.name} flavour {flavour.upper()} from your basket'))
+            messages.success(request, (f'Removed 'f'{product.name} Flavour - {flavour.upper()} Strength - {strength.upper()} from your basket'))
         else:
             basket.pop(item_id)
-            print('test 3')
             messages.success(request, f'Removed {product.name} from your basket')
 
         request.session['basket'] = basket
