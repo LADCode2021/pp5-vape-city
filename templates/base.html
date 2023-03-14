@@ -245,18 +245,16 @@
 
     <!-- Footer Section - Adapted from https://mdbootstrap.com/docs/standard/navigation/footer/-->
 
-    <footer class="bg-dark text-center text-white">
+    <footer class="bg-dark text-center text-white mt-4">
         <!-- Grid container -->
         <div class="container p-4">
             <!-- Section: Social media -->
             <section class="mb-4">
                 <!-- Facebook -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                <p><strong>Follow us on Facebook</strong></p>
+                <a class="btn btn-outline-light btn-floating m-1"
+                    href="https://www.facebook.com/people/Vape-City/100090646303099/?mibextid=LQQJ4d" role="button"><i
                         class="fab fa-facebook-f"></i></a>
-
-                <!-- Instagram -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                        class="fab fa-instagram"></i></a>
 
                 <!-- Section: Social media -->
             </section>
@@ -335,9 +333,7 @@
             <!-- Section: Text -->
             <section class="mb-4">
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
-                    repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
-                    eum harum corrupti dicta, aliquam sequi voluptate quas.
+                   Please find useful links below.
                 </p>
             </section>
             <!-- Section: Text -->
@@ -348,20 +344,14 @@
                 <div class="row">
                     <!--Grid column-->
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">Links</h5>
+                        <h5 class="text-uppercase">Customer Service</h5>
 
                         <ul class="list-unstyled mb-0">
                             <li>
-                                <a href="#!" class="text-white">Link 1</a>
+                                <a href="{% url 'make_contact' %}" class="text-white">Contact Us</a>
                             </li>
                             <li>
-                                <a href="#!" class="text-white">Link 2</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white">Link 3</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white">Link 4</a>
+                                <a href="{% url 'delivery_information' %}" class="text-white">Delivery Information</a>
                             </li>
                         </ul>
                     </div>
@@ -369,20 +359,23 @@
 
                     <!--Grid column-->
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">Links</h5>
+                        <h5 class="text-uppercase">Shop</h5>
 
                         <ul class="list-unstyled mb-0">
                             <li>
-                                <a href="#!" class="text-white">Link 1</a>
+                                <a href="{% url 'products' %}" class="text-white">All Products</a>
                             </li>
                             <li>
-                                <a href="#!" class="text-white">Link 2</a>
+                                <a href="{% url 'products' %}?filter=category&category=disposable_vape"
+                                    class="text-white">Disposable Vapes</a>
                             </li>
                             <li>
-                                <a href="#!" class="text-white">Link 3</a>
+                                <a href="{% url 'products' %}?filter=category&category=liquid_nic_salts"
+                                    class="text-white">Nicotine Salts</a>
                             </li>
                             <li>
-                                <a href="#!" class="text-white">Link 4</a>
+                                <a href="{% url 'products' %}?filter=category&category=liquid_shortfill"
+                                    class="text-white">Shortfill Liquids</a>
                             </li>
                         </ul>
                     </div>
@@ -390,20 +383,11 @@
 
                     <!--Grid column-->
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">Links</h5>
+                        <h5 class="text-uppercase">Blog</h5>
 
                         <ul class="list-unstyled mb-0">
                             <li>
-                                <a href="#!" class="text-white">Link 1</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white">Link 2</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white">Link 3</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white">Link 4</a>
+                                <a href="#!" class="text-white">Blog - Coming Soon!</a>
                             </li>
                         </ul>
                     </div>
@@ -411,20 +395,16 @@
 
                     <!--Grid column-->
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">Links</h5>
+                        <h5 class="text-uppercase">Vaping Safety UK</h5>
 
                         <ul class="list-unstyled mb-0">
                             <li>
-                                <a href="#!" class="text-white">Link 1</a>
+                                <a href="https://www.nhs.uk/live-well/quit-smoking/using-e-cigarettes-to-stop-smoking/"
+                                    class="text-white">NHS Information</a>
                             </li>
                             <li>
-                                <a href="#!" class="text-white">Link 2</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white">Link 3</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white">Link 4</a>
+                                <a href="https://www.gov.uk/government/publications/towards-a-smoke-free-generation-tobacco-control-plan-for-england"
+                                    class="text-white">Government Policy Information</a>
                             </li>
                         </ul>
                     </div>
@@ -438,8 +418,8 @@
 
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2020 Copyright:
-            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            © 2023 Copyright:
+            <a class="text-white" href="#">Vape City</a>
         </div>
         <!-- Copyright -->
     </footer>

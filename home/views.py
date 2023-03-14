@@ -9,3 +9,8 @@ def index(request):
         'products': products
     }
     return render(request, "home/index.html", context)
+
+
+def delivery_information(request):
+    """ A view to return the index page and products"""
+    return render(request, "home/delivery_information.html")
