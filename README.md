@@ -1,5 +1,3 @@
-# THIS PROJECT IS UNFINISHED. I AM WAITING TO HEAR BACK ON AN EXTENSION. I AM SUBMITTING JUST IN CASE.
-
 # PP5 - Vape City
 
 Vape City is an e-commerce site that allows users to order vaping products, create accounts to view order history, sign-up to newsletters and contact the store. As an avid vaper I struggle to find vaping e-commerce platforms with good UX that are reliable. This is a problem in the vaping industry as retail vaping products are generally supplied by very small businesses that cannot afford good developers. They also cannot use popular self-build platforms such as Shopify as most ban the setup of vape shops due to the lack of regulation in the vaping space. My goal with this site is to use the skills and knowledge I have learning throughout this course to solve this real-world problem with an e-commerce site that could become a trusted brand with good UX and a reliable store.

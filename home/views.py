@@ -14,3 +14,8 @@ def index(request):
 def delivery_information(request):
     """ A view to return the index page and products"""
     return render(request, "home/delivery_information.html")
+
+
+def privacy_policy(request):
+    """ A view to return the index page and products"""
+    return render(request, "home/privacy_policy.html")

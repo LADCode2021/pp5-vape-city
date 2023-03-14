@@ -9,4 +9,9 @@ urlpatterns = [
         views.delivery_information,
         name='delivery_information'
         ),
+    path(
+        'privacy_policy/',
+        views.privacy_policy,
+        name='privacy_policy'
+        ),
 ]
