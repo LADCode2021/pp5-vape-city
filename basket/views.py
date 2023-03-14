@@ -22,7 +22,7 @@ def add_to_basket(request, item_id):
     if 'product_flavour' and 'product_strength' in request.POST:
         flavour = request.POST['product_flavour']
         strength = request.POST['product_strength']
-        item = f'{item_id}_{flavour}_{strength}'.replace(" ", "")
+        item = f'{item_id}_{flavour}_{strength}'
     basket = request.session.get('basket', {})
 
     if item:
@@ -118,16 +118,14 @@ def remove_from_basket(request, item_id):
         product = get_object_or_404(Product, pk=item_id)
         item = None
         if 'product_item' in request.POST:
-            print('working')
             item = request.POST['product_item']
+            flavour = item.split('_')[1]
+            strength = item.split('_')[2]
         basket = request.session.get('basket', {})
 
         if item:
             del basket[item_id]['items_by_variation'][item]
-            print('test 1')
             if not basket[item_id]['items_by_variation']:
-                flavour = item.split('_')[1]
-                strength = item.split('_')[2]
                 basket.pop(item_id)
             messages.success(
                 request,
@@ -147,4 +145,5 @@ def remove_from_basket(request, item_id):
 
     except Exception as e:
         messages.error(request, f'Error removing item: {e}')
+        print(e)
         return HttpResponse(status=500)
