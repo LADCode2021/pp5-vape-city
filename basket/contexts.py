@@ -43,8 +43,11 @@ def basket_contents(request):
     else:
         delivery = 0
         free_delivery_delta = 0
-
-    grand_total = delivery + total
+    
+    if total > 0:
+        grand_total = delivery + total
+    else:
+        grand_total = 0
 
     context = {
         'basket_items': basket_items,
