@@ -22,7 +22,48 @@ I finished the majority of my initial issues and also added a couple more. I did
 
 ## Existing Features
 
+### Homepage with banner
+
+home-page-screenshot.png
+
+### Navigation menu with dropdowns
+
+nav-with-drop-down.png
+
+### Shop by product category on homepage
+
+shop-by-product-hompage.png
+
+### Shop all products with sort functionality
+
+shop-by-sort.png
+
+### Shop by filter and sort
+
+shop-by-filter-and-sort.png
+
+### Individual product detail page without variations
+
+individual-product-detail-page.png
+
+### Individual product detail page with variations
+
+product-detail-page-variations.png
+
+### Basket with items showing variation or no variation
+
+
+
+
+
+
+
+
 ## Future Features
+
+* A blog page
+* Subscription to certain products
+* Size and colour variations for certain product types, i.e. Mods and Tanks
 
 # Business Model
 
@@ -113,6 +154,12 @@ I was successfully able to add new flavours ands strengths to products. Please s
 
 ![](docs/images/add-variation-success.png)
 
+* Test edit product in DB
+
+![](docs/images/edit-product-in-db.png)
+
+![](docs/images/edit-product-success.png)
+
 * Test add product without variation to basket
 
 ![](docs/images/add-product-wihout-variations-success.png)
@@ -141,13 +188,17 @@ And items without variations:
 
 ![](docs/images/remove-non-variation-item-success.png)
 
-* Test checkout success
+* Test checkout success/webhook handler
 
 When testing checkout the order was being created and giving the checkout success page when adding a product without variations. However, it was being created twice in the database. I checked stripe and the order was only there once. This was a good test in that i know the order was being created by the webhook handler but it must have meant there was an error in my code somewhere.
 
 I tested it in dev and only one order was created but it wasn't doing the order total correctly in the database and the webhook handler was failing in stripe. I discovered there was an issue with the delivery cost sum as it was still set to work out my percentage of order in models.py which I had already removed. I also rolled back to before I had refactored it for PEP8 style errors in case I had introduced an error somewhere.
 
+Once I had pushed to GitHub again I still got a checkout success page but the webhook failed on stripe this time when testing a product with variations. I had forgotten to update the webhook handler with variables that created variations from the item string. I copied the code over from views and pushed to GitHub again.
 
+The order successfully submits again but once again two orders are created in the database. The webhook is also successful again in Stripe and tells me the order has been created from webhook.
+
+Something is going wrong on the order.save in the checkout views that is allowing it to save the order but then the webhook handler doesn't recognise an order exists.
 
 
 ## Remaining Bugs
@@ -162,13 +213,15 @@ I tested it in dev and only one order was created but it wasn't doing the order 
 
 * This is not necessarily a bug but it affects user feedback when removing items with variations from the basket. I had an if condition in the remove_from_basket view that created flavour and strength variables to include in success messages if the user removed an item with a strength/flavour from the basket. However, as mentioned in testing when removing items without variations from the basket I received a internal 500 error. I have a theory on how to fix this so I can include variations in remove messages but I have run out of time to implement and test.
 
+* In the deployed app there is a bug which allows an order to be created twice in the database. It also won't calculate the order total. It works in dev but not on the deployed app. I have run out of time to fix this issue.
+
 ## Validator Testing
 
 I validated views.py, models.py and forms.py in Code Institute PEP8 Linter (https://pep8ci.herokuapp.com/) and no errors were returned.
 
 # Deployment
 
-I followed the following steps to deploy my app to Heroku (these are based on the lessons from Hello Django walkthrough):
+I followed the steps detailed in the Boutique Ado deployment instructions. I have not included these below as it is now a written guide on the LMS.
 
 
 # Technologies Used

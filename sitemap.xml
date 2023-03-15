@@ -9,72 +9,247 @@
 
 <url>
   <loc>https://pp5-vape-city.herokuapp.com/</loc>
-  <lastmod>2023-03-01T09:20:42+00:00</lastmod>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://pp5-vape-city.herokuapp.com/accounts/signup/</loc>
-  <lastmod>2023-03-01T09:20:42+00:00</lastmod>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://pp5-vape-city.herokuapp.com/accounts/login/</loc>
-  <lastmod>2023-03-01T09:20:42+00:00</lastmod>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://pp5-vape-city.herokuapp.com/basket/</loc>
-  <lastmod>2023-03-01T09:20:42+00:00</lastmod>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://pp5-vape-city.herokuapp.com/products/?sort=price&amp;direction=asc</loc>
-  <lastmod>2023-03-01T09:20:42+00:00</lastmod>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://pp5-vape-city.herokuapp.com/products/?sort=rating&amp;direction=desc</loc>
-  <lastmod>2023-03-01T09:20:42+00:00</lastmod>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://pp5-vape-city.herokuapp.com/products/?sort=category&amp;direction=asc</loc>
-  <lastmod>2023-03-01T09:20:42+00:00</lastmod>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://pp5-vape-city.herokuapp.com/products/</loc>
-  <lastmod>2023-03-01T09:20:42+00:00</lastmod>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://pp5-vape-city.herokuapp.com/products/3/</loc>
-  <lastmod>2023-03-01T09:20:42+00:00</lastmod>
+  <loc>https://pp5-vape-city.herokuapp.com/products/?filter=category&amp;category=mod</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://pp5-vape-city.herokuapp.com/products/2/</loc>
-  <lastmod>2023-03-01T09:20:42+00:00</lastmod>
+  <loc>https://pp5-vape-city.herokuapp.com/products/?filter=category&amp;category=tank</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://pp5-vape-city.herokuapp.com/products/1/</loc>
-  <lastmod>2023-03-01T09:20:42+00:00</lastmod>
+  <loc>https://pp5-vape-city.herokuapp.com/products/?filter=category&amp;category=coil</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://pp5-vape-city.herokuapp.com/products/?filter=category&amp;category=disposable_vape</loc>
-  <lastmod>2023-03-01T09:20:42+00:00</lastmod>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/?filter=category&amp;category=liquid_shortfill</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/?filter=category&amp;category=liquid_10ml</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/?filter=category&amp;category=liquid_nic_salts</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/4/</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/?category=disposable_vape</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/3/</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/2/</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/1/</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/8/</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/?category=liquid_nic_salts</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/7/</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/6/</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/5/</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/12/</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/?category=liquid_10ml</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/11/</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/10/</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/9/</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/16/</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/?category=liquid_shortfill</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/15/</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/14/</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/13/</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/18/</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/?category=mod</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/17/</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/19/</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/?category=tank</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/20/</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/?category=pod</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/?filter=category&amp;category=pod</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/21/</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/products/?category=coil</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/contact/</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/delivery_information/</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pp5-vape-city.herokuapp.com/privacy_policy/</loc>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://pp5-vape-city.herokuapp.com/accounts/password/reset/</loc>
-  <lastmod>2023-03-01T09:20:42+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://pp5-vape-city.herokuapp.com/products/?category=disposable_vape</loc>
-  <lastmod>2023-03-01T09:20:42+00:00</lastmod>
+  <lastmod>2023-03-15T12:12:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
