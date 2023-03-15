@@ -94,19 +94,15 @@ def add_product(request):
             product = form.save()
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
-        else:
-            messages.error(
-                request,
-                'Failed to add product. Please ensure the form is valid.'
-                )
-        if form2.is_valid():
+        elif form2.is_valid():
             category = form2.save()
             messages.success(request, 'Successfully added category!')
             return redirect('.')
         else:
             messages.error(
                 request,
-                'Failed to add category. Please ensure the form is valid.'
+                'Failed to add product or category.'
+                'Please ensure the form is valid.'
                 )
     else:
         form = ProductForm()
@@ -182,12 +178,8 @@ def add_variation(request):
             return redirect(
                 reverse('product_detail', args=[flavour.product.id])
                 )
-        else:
-            messages.error(
-                request,
-                'Failed to add variation. Please ensure the form is valid.'
-                )
-        if form2.is_valid:
+
+        elif form2.is_valid:
             strength = form2.save()
             messages.success(request, 'Successfully added variation!')
             return redirect(
@@ -196,7 +188,8 @@ def add_variation(request):
         else:
             messages.error(
                 request,
-                'Failed to add variation. Please ensure the form is valid.'
+                'Failed to add product or variation.'
+                'Please ensure the form is valid.'
                 )
     else:
         form1 = FlavourForm()
