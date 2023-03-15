@@ -8,10 +8,7 @@ from django.db.models.functions import Lower
 
 
 def all_products(request):
-    """
-    A view to show all products, including sorting and search queries.
-    This has been adapted from Boutique Ado walkthrough
-    """
+    """ A view to show all products, including sorting and search queries """
 
     products = Product.objects.all()
     query = None
@@ -48,7 +45,7 @@ def all_products(request):
 
             queries = Q(
                 name__icontains=query
-                ) | Q(description__icontains=query)
+            ) | Q(description__icontains=query)
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'

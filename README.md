@@ -24,43 +24,83 @@ I finished the majority of my initial issues and also added a couple more. I did
 
 ### Homepage with banner
 
-home-page-screenshot.png
+![](docs/images/home-page-screenshot.png)
 
 ### Navigation menu with dropdowns
 
-nav-with-drop-down.png
+![](docs/images/nav-with-drop-down.png)
+
+### Search site
+
+![](docs/images/search.png)
 
 ### Shop by product category on homepage
 
-shop-by-product-hompage.png
+![](docs/images/shop-by-product-hompage.png)
 
 ### Shop all products with sort functionality
 
-shop-by-sort.png
+![](docs/images/shop-by-sort.png)
 
 ### Shop by filter and sort
 
-shop-by-filter-and-sort.png
+![](docs/images/shop-by-filter-and-sort.png)
 
 ### Individual product detail page without variations
 
-individual-product-detail-page.png
+![](docs/images/individual-product-detail-page.png)
 
 ### Individual product detail page with variations
 
-product-detail-page-variations.png
+![](docs/images/product-detail-page-variations.png)
 
 ### Basket with items showing variation or no variation
 
+![](docs/images/shopping-basket.png)
 
+### Checkout page with saved profile info
 
+![](docs/images/checkout-page.png)
 
+### Checkout success page
 
+![](docs/images/checkout-success.png)
 
+### Add product and category to DB page
 
+![](docs/images/add-product-and-category-page.png)
+
+### Add variations to DB page
+
+![](docs/images/add-variation-page.png)
+
+### Update profile and see order history page
+
+![](docs/images/update-profile-and-see-order-history-page.png)
+
+### Footer Facebook link/Newsletter sign-up
+
+![](docs/images/footer.png)
+
+There is also links to various pages such as contact us, delivery information, privacy policy, shopping pages again, a blog page (not yet in action).
+
+I also included footer links to Vaping information. This is called backlinking and is good for SEO. Google will see the site as more trusted because of including NHS and Government information.
+
+### Contact form
+
+![](docs/images/contact-us.png)
+
+### Privacy Policy
+
+![](docs/images/privacy-policy.png)
+
+### Delivery Information
+
+![](docs/images/delivery-information.png)
 
 ## Future Features
 
+* Edit variations from front end
 * A blog page
 * Subscription to certain products
 * Size and colour variations for certain product types, i.e. Mods and Tanks
@@ -76,7 +116,23 @@ The marketing approaches I have implemented so far are:
 * Social Media Marketing with a Facebook page setup for the store (https://www.facebook.com/people/Vape-City/100090646303099/?mibextid=LQQJ4d)
 * Email Marketing with a newsletter sign-up in the footer of the site
 
-# Custom Models
+# Custom Models.py
+
+I have created at least 3 custom models across all apps in my project
+
+## Contact model in Contact/models.py
+
+![](docs/images/contact-form-model.png)
+
+## Strength and Flavour models in Product/models.py
+
+![](docs/images/strengh-and-flavour-models.png)
+
+## Product model in Product/models.py
+
+![](docs/images/product-model.png)
+
+The rest of the models present whilst adapted in many places are not significantly different to those present in the Boutique Ado project.
 
 # Testing
 
@@ -85,6 +141,10 @@ The marketing approaches I have implemented so far are:
 ### Test Navigation
 
 I tested all navigation links in both the navbar and inline links and everything went to where it was supposed to.
+
+### Test search
+
+Search only works when on the products url. This was not the case when I first coded it. But it works in some sense. I have included this in remaining bugs.
 
 ### Contact Form Tests
 
@@ -203,6 +263,8 @@ Something is going wrong on the order.save in the checkout views that is allowin
 
 ## Remaining Bugs
 
+* Search only works when already on the products url.
+
 * There is an error on index.html. I added in last minute a new div to link through to show all products in each category. It broke the forloop counter. On large-xl screens the products are supposed to have 4 columns on each row. After adding an additional div after the forloop counter it pushes one of the products onto the next line. I have a theory on how to fix it but I have run out of time to implement in time for submission. 
 
 * All of the links through to products in each category align with the top of the card when pushed to a new line. If I ever wanted to have more than 4 products to display for each category on the homepage I would need to fix this as it is not good UX. The bug also exists on mobile devices.
@@ -217,7 +279,9 @@ Something is going wrong on the order.save in the checkout views that is allowin
 
 ## Validator Testing
 
-I validated views.py, models.py and forms.py in Code Institute PEP8 Linter (https://pep8ci.herokuapp.com/) and no errors were returned.
+I validated all views.py, models.py and forms.py from all apps in Code Institute PEP8 Linter (https://pep8ci.herokuapp.com/) and no errors were returned.
+
+The only exceptions are the webhandler files and settings.py. I chose to leave the PEP8 style errors here as they are lifted directly from 3rd parties and errors were introduced when I tried to resolve the errors.
 
 # Deployment
 
@@ -264,7 +328,7 @@ I used the following technologies:
 
 # Credits
 
-* Site adapted and built on Boutique Ado walkthrough project
+* Site adapted and built from Boutique Ado walkthrough project lessons
 
 * Image credits in image alt text
 
