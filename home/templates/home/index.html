@@ -88,25 +88,14 @@
                     {% endif %}
                     {% endfor %}
 
-                    <div class="equalHeight col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <div class="equalHeight card h-100 border-0">
-                            <a href="{% url 'products' %}?filter=category&category=disposable_vape"
-                                class="stretched-link"></a>
-                            <div class="card-body pb-0">
-                                <div class="d-flex center">
-                                    <div class="btn btn-black">
-                                        <a href="{% url 'products' %}?filter=category&category=disposable_vape"
-                                            class=""></a>
-                                        <span class="text-uppercase">Shop
-                                            All Disposables
-                                            <span class="icon">
-                                                <i class="fas fa-chevron-right"></i>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <a href="{% url 'products' %}?filter=category&category=disposable_vape" class="">
+                            <span class="text-uppercase text-black">Shop All Disposables
+                                <span class="icon">
+                                    <i class="fas fa-chevron-right"></i>
+                                </span>
+                            </span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -203,25 +192,14 @@
                     {% endif %}
                     {% endfor %}
 
-                    <div class="equalHeight col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <div class="equalHeight card h-100 border-0">
-                            <a href="{% url 'products' %}?filter=category&category=liquid_nic_salts"
-                                class="stretched-link"></a>
-                            <div class="card-body pb-0">
-                                <div class="d-flex center">
-                                    <div class="btn btn-black">
-                                        <a href="{% url 'products' %}?filter=category&category=liquid_nic_salts"
-                                            class=""></a>
-                                        <span class="text-uppercase">Shop
-                                            All Nicotine Salts
-                                            <span class="icon">
-                                                <i class="fas fa-chevron-right"></i>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <a href="{% url 'products' %}?filter=category&category=liquid_nic_salts" class="">
+                            <span class="text-uppercase text-black">Shop All Nicotine Salts
+                                <span class="icon">
+                                    <i class="fas fa-chevron-right"></i>
+                                </span>
+                            </span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -318,25 +296,15 @@
                     {% endif %}
                     {% endfor %}
 
-                    <div class="equalHeight col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <div class="equalHeight card h-100 border-0">
-                            <a href="{% url 'products' %}?filter=category&category=liquid_10ml"
-                                class="stretched-link"></a>
-                            <div class="card-body pb-0">
-                                <div class="d-flex center">
-                                    <div class="btn btn-black">
-                                        <a href="{% url 'products' %}?filter=category&category=liquid_10ml"
-                                            class=""></a>
-                                        <span class="text-uppercase">Shop
-                                            All 10ml Liquids
-                                            <span class="icon">
-                                                <i class="fas fa-chevron-right"></i>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <a href="{% url 'products' %}?filter=category&category=liquid_10ml" class="">
+                            <span class="text-uppercase text-black">Shop All 10ml Liquid
+                                <span class="icon">
+                                    <i class="fas fa-chevron-right"></i>
+                                </span>
+                            </span>
+                        </a>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -433,25 +401,14 @@
                     {% endif %}
                     {% endfor %}
 
-                    <div class="equalHeight col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <div class="equalHeight card h-100 border-0">
-                            <a href="{% url 'products' %}?filter=category&category=liquid_shortfill"
-                                class="stretched-link"></a>
-                            <div class="card-body pb-0">
-                                <div class="d-flex center">
-                                    <div class="btn btn-black">
-                                        <a href="{% url 'products' %}?filter=category&category=liquid_shortfill"
-                                            class=""></a>
-                                        <span class="text-uppercase">Shop
-                                            All Shortfill Liquids
-                                            <span class="icon">
-                                                <i class="fas fa-chevron-right"></i>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <a href="{% url 'products' %}?filter=category&category=liquid_shortfill" class="">
+                            <span class="text-uppercase text-black">Shop All Shortfill Liquid
+                                <span class="icon">
+                                    <i class="fas fa-chevron-right"></i>
+                                </span>
+                            </span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -468,33 +425,33 @@
 {% block postloadjs %}
 {{ block.super }}
 <script type="text/javascript">
-(function () {
-    equalHeight(false);
-  })();
-   
-  window.onresize = function(){
-    equalHeight(true);
-  }
-   
-  function equalHeight(resize) {
-    var elements = document.getElementsByClassName("equalHeight"),
-        allHeights = [],
-        i = 0;
-    if(resize === true){
-      for(i = 0; i < elements.length; i++){
-        elements[i].style.height = 'auto';
-      }
+    (function () {
+        equalHeight(false);
+    })();
+
+    window.onresize = function () {
+        equalHeight(true);
     }
-    for(i = 0; i < elements.length; i++){
-      var elementHeight = elements[i].clientHeight;
-      allHeights.push(elementHeight);
+
+    function equalHeight(resize) {
+        var elements = document.getElementsByClassName("equalHeight"),
+            allHeights = [],
+            i = 0;
+        if (resize === true) {
+            for (i = 0; i < elements.length; i++) {
+                elements[i].style.height = 'auto';
+            }
+        }
+        for (i = 0; i < elements.length; i++) {
+            var elementHeight = elements[i].clientHeight;
+            allHeights.push(elementHeight);
+        }
+        for (i = 0; i < elements.length; i++) {
+            elements[i].style.height = Math.max.apply(Math, allHeights) + 'px';
+            if (resize === false) {
+                elements[i].className = elements[i].className + " show";
+            }
+        }
     }
-    for(i = 0; i < elements.length; i++){
-      elements[i].style.height = Math.max.apply( Math, allHeights) + 'px';
-      if(resize === false){
-        elements[i].className = elements[i].className + " show";
-      }
-    }
-  }
 </script>
 {% endblock %}

@@ -14,6 +14,9 @@ Please see my initial GitHub issues:
 
 ![](docs/images/to-do-list-screenshot.png)
 
+I finished the majority of my initial issues and also added a couple more. I didn't end up creating functionality for subscribing for regular products or deleting accounts. These are things I would consider for future iterations but they were not in scope for the initial sprints on this project. Please see my finished board:
+
+![](docs/images/to-do-list-finished.png)
 
 # Features
 
@@ -22,6 +25,15 @@ Please see my initial GitHub issues:
 ## Future Features
 
 # Business Model
+
+The business model I have chosen for this site is B2C (Business to Customer). 
+
+The marketing approaches I have implemented so far are: 
+
+* Search Engine Optimisation (SEO) with rel tags, meta description, robots.txt file and sitemap.xml.
+* Content marketing linked in with SEO by ensuring content is specific and follows keyword research I have done around the most popular vape searches, i.e. disposable vape
+* Social Media Marketing with a Facebook page setup for the store (https://www.facebook.com/people/Vape-City/100090646303099/?mibextid=LQQJ4d)
+* Email Marketing with a newsletter sign-up in the footer of the site
 
 # Custom Models
 
@@ -113,7 +125,7 @@ I used the following technologies:
 
 # Credits
 
-* Site based on Boutique Ado walkthrough project
+* Site adapted and built on Boutique Ado walkthrough project
 
 * Image credits in image alt text
 
