@@ -143,7 +143,9 @@ And items without variations:
 
 * Test checkout success
 
+When testing checkout the order was being created and giving the checkout success page when adding a product without variations. However, it was being created twice in the database. I checked stripe and the order was only there once. This was a good test in that i know the order was being created by the webhook handler but it must have meant there was an error in my code somewhere.
 
+I tested it in dev and only one order was created but it wasn't doing the order total correctly in the database and the webhook handler was failing in stripe. I discovered there was an issue with the delivery cost sum as it was still set to work out my percentage of order in models.py which I had already removed. I also rolled back to before I had refactored it for PEP8 style errors in case I had introduced an error somewhere.
 
 
 

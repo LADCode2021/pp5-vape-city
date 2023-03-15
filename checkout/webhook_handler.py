@@ -138,6 +138,8 @@ class StripeWH_Handler:
                         order_line_item.save()
                     else:
                         for item, quantity in item_data['items_by_variation'].items():
+                            flavour = item.split('_')[1]
+                            strength = item.split('_')[2]
                             order_line_item = OrderLineItem(
                                 order=order,
                                 product=product,
