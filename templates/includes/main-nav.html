@@ -17,10 +17,9 @@
                 Vape Equipment
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="vape-equipment-link">
-                <a href="" class="dropdown-item">Mods</a>
-                <a href="" class="dropdown-item">Tanks</a>
-                <a href="" class="dropdown-item">Coils</a>
-                <a href="" class="dropdown-item">Batteries</a>
+                <a href="{% url 'products' %}?filter=category&category=mod" class="dropdown-item">Mods</a>
+                <a href="{% url 'products' %}?filter=category&category=tank" class="dropdown-item">Tanks</a>
+                <a href="{% url 'products' %}?filter=category&category=coil" class="dropdown-item">Coils</a>
             </div>
         </li>
 
@@ -29,9 +28,7 @@
                 Disposable Vapes
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="disposable-vapes-link">
-                <a href="" class="dropdown-item">Elf bars</a>
-                <a href="" class="dropdown-item">Lost Mary</a>
-                <a href="" class="dropdown-item">Vuse</a>
+                <a href="{% url 'products' %}?filter=category&category=disposable_vape" class="dropdown-item">All Disposables</a>
             </div>
         </li>
 
@@ -40,21 +37,9 @@
                 Liquids
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="liquids-link">
-                <a href="" class="dropdown-item">Shortfill Liquids</a>
-                <a href="" class="dropdown-item">15ml Liquids</a>
-                <a href="" class="dropdown-item">Disposable Pods</a>
-            </div>
-        </li>
-
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Special Offers
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">New Arrivals</a>
-                <a href="" class="dropdown-item">Deals</a>
-                <a href="" class="dropdown-item">Clearance</a>
-                <a href="" class="dropdown-item">All Specials</a>
+                <a href="{% url 'products' %}?filter=category&category=liquid_shortfill" class="dropdown-item">Shortfill Liquids</a>
+                <a href="{% url 'products' %}?filter=category&category=liquid_10ml" class="dropdown-item">10ml Liquids</a>
+                <a href="{% url 'products' %}?filter=category&category=liquid_nic_salts" class="dropdown-item">Nicotine Salts</a>
             </div>
         </li>
     </ul>

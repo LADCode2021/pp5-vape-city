@@ -51,8 +51,15 @@ I tested:
 
 * Form submit with empty fields and the form would not submit and gave feedback to the user
 
+![](docs/images/empty-field-test.png)
+
 * Form submit with invalid email and it would not submit and gave user feedback to user
+
+![](docs/images/invalid-email-test.png)
+
 * Form submit with invalid phone number and it gave the user feedback
+
+![](docs/images/contact-form-phone-error.png)
 
 ### Registration Form Tests
 
@@ -81,15 +88,77 @@ I tried to create an account with existing email address and it raised an error 
 
 ## CRUD Operation Tests
 
-* Test add product
+* Test add new product to DB from frontend
 
-* Test add category
+This did work initially but I later found an error when adding a category. Please see below for error found.
 
-* Test add flavour variation
+I was also able to confirm that adding invalid data to the fields would prevent the form submitting. I tested every field and they all gave feedback to the user. Here is an example:
 
-*Test add strength variation
+![](docs/images/add-product-form-error-example.png)
+
+
+* Test add new category to DB from frontend
+
+While adding a new category to the DB from the front end I discovered that it would raise two messages. One an error saying a product couldn't be added and one saying a category had been added.
+
+![](docs/images/add-category-error.png)
+
+I checked the views.py and the way I had written the code was causing the error. I had both forms in the same if request.POST. In doing so it would still try to validate the product form when I was actually submitting a category. To correct the error I split the two forms into different if request.POST conditions and checked whether a unique field to that model was being submitted. This corrected the error:
+
+![](docs/images/add-product-error-fix.png)
+
+* Test add flavour and strength variations to DB
+
+I was successfully able to add new flavours ands strengths to products. Please see an example with user feedback message showing it worked (form to submit shown above in existing features):
+
+![](docs/images/add-variation-success.png)
+
+* Test add product without variation to basket
+
+![](docs/images/add-product-wihout-variations-success.png)
+
+* Test add product with variation to basket
+
+![](docs/images/add-product-with-variation-to-basket.png)
+
+* Test update quantity of item in basket
+
+The item updates successfully when typing new quantities in and when using the increment and decrement buttons. It will also delete the item if the user puts 0 in the box. I have not included a screenshot for every variation of update. Please see updating quantity to 2 as an example below: 
+
+![](docs/images/update-quantity-in-basket.png)
+
+* Test remove item from basket
+
+In initial testing this worked fine. As in I could remove items with and without variations. But my original testing was in different states of basket. When I did final testing as in tested every possible remove scenario I found that items without variations would not remove and raised a server 500 error. This was related to an if condition I had created to create variables of variations to include in remove success messages. To correct the issue I had to remove this functionality.
+
+![](docs/images/remove-non-variation-item-error.png)
+
+Once removed I was able to remove items with variations:
+
+![](docs/images/remove-item-with-variation-from-basket-success.png)
+
+And items without variations:
+
+![](docs/images/remove-non-variation-item-success.png)
+
+* Test checkout success
+
+
+
+
+
 
 ## Remaining Bugs
+
+* There is an error on index.html. I added in last minute a new div to link through to show all products in each category. It broke the forloop counter. On large-xl screens the products are supposed to have 4 columns on each row. After adding an additional div after the forloop counter it pushes one of the products onto the next line. I have a theory on how to fix it but I have run out of time to implement in time for submission. 
+
+* All of the links through to products in each category align with the top of the card when pushed to a new line. If I ever wanted to have more than 4 products to display for each category on the homepage I would need to fix this as it is not good UX. The bug also exists on mobile devices.
+
+* The scroll bar in the basket popup when adding multiple products is not working. It displays a long list which is not great UX. I have run out of time to fix thi in time for submission.
+
+* I discovered in testing the issue with adding categories (described above). The original views.py if statement needs to be corrected in the view for adding variations also. I have run out of time to implement and test this fix. It's not super urgent as the variations will still add. It just throws an error message unnecessarily.
+
+* This is not necessarily a bug but it affects user feedback when removing items with variations from the basket. I had an if condition in the remove_from_basket view that created flavour and strength variables to include in success messages if the user removed an item with a strength/flavour from the basket. However, as mentioned in testing when removing items without variations from the basket I received a internal 500 error. I have a theory on how to fix this so I can include variations in remove messages but I have run out of time to implement and test.
 
 ## Validator Testing
 
