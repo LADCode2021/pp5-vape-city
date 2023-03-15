@@ -43,7 +43,16 @@ The marketing approaches I have implemented so far are:
 
 ### Test Navigation
 
+I tested all navigation links in both the navbar and inline links and everything went to where it was supposed to.
+
 ### Contact Form Tests
+
+I tested:
+
+* Form submit with empty fields and the form would not submit and gave feedback to the user
+
+* Form submit with invalid email and it would not submit and gave user feedback to user
+* Form submit with invalid phone number and it gave the user feedback
 
 ### Registration Form Tests
 

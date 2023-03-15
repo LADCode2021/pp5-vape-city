@@ -19,8 +19,8 @@
                 <div class="row mt-1">
                     {% for product in products %}
                     {% if product.category.name == 'disposable_vape' %}
-                    <div class="equalHeight col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <div class="equalHeight card h-100 border-0">
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class=" card h-100 border-0">
                             {% if product.image %}
                             <a href="{% url 'product_detail' product.id %}">
                                 <img class="card-img-top img-fluid" src="{{ product.image.url }}"
@@ -89,8 +89,8 @@
                     {% endfor %}
 
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <a href="{% url 'products' %}?filter=category&category=disposable_vape" class="">
-                            <span class="text-uppercase text-black">Shop All Disposables
+                        <a href="{% url 'products' %}?filter=category&category=liquid_nic_salts" class="">
+                            <span class="text-uppercase text-black">Shop All Nicotine Salts
                                 <span class="icon">
                                     <i class="fas fa-chevron-right"></i>
                                 </span>
@@ -123,8 +123,8 @@
                 <div class="row mt-1">
                     {% for product in products %}
                     {% if product.category.name == 'liquid_nic_salts' %}
-                    <div class="equalHeight col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <div class="equalHeight card h-100 border-0">
+                    <div class=" col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class=" card h-100 border-0">
                             {% if product.image %}
                             <a href="{% url 'product_detail' product.id %}">
                                 <img class="card-img-top img-fluid" src="{{ product.image.url }}"
@@ -227,8 +227,8 @@
                 <div class="row mt-1">
                     {% for product in products %}
                     {% if product.category.name == 'liquid_10ml' %}
-                    <div class="equalHeight col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <div class="equalHeight card h-100 border-0">
+                    <div class=" col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class=" card h-100 border-0">
                             {% if product.image %}
                             <a href="{% url 'product_detail' product.id %}">
                                 <img class="card-img-top img-fluid" src="{{ product.image.url }}"
@@ -305,10 +305,10 @@
                             </span>
                         </a>
                     </div>
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <div class="btt-button shadow-sm rounded-0 border border-black">
         <a class="btt-link d-flex h-100">
@@ -332,8 +332,8 @@
                 <div class="row mt-1">
                     {% for product in products %}
                     {% if product.category.name == 'liquid_shortfill' %}
-                    <div class="equalHeight col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <div class="equalHeight card h-100 border-0">
+                    <div class=" col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class=" card h-100 border-0">
                             {% if product.image %}
                             <a href="{% url 'product_detail' product.id %}">
                                 <img class="card-img-top img-fluid" src="{{ product.image.url }}"
@@ -436,8 +436,8 @@
                 <div class="row mt-1">
                     {% for product in products %}
                     {% if product.category.name == 'mod' %}
-                    <div class="equalHeight col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <div class="equalHeight card h-100 border-0">
+                    <div class=" col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class=" card h-100 border-0">
                             {% if product.image %}
                             <a href="{% url 'product_detail' product.id %}">
                                 <img class="card-img-top img-fluid" src="{{ product.image.url }}"
@@ -540,8 +540,8 @@
                 <div class="row mt-1">
                     {% for product in products %}
                     {% if product.category.name == 'tank' %}
-                    <div class="equalHeight col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <div class="equalHeight card h-100 border-0">
+                    <div class=" col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class=" card h-100 border-0">
                             {% if product.image %}
                             <a href="{% url 'product_detail' product.id %}">
                                 <img class="card-img-top img-fluid" src="{{ product.image.url }}"
@@ -644,8 +644,8 @@
                 <div class="row mt-1">
                     {% for product in products %}
                     {% if product.category.name == 'pod' %}
-                    <div class="equalHeight col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <div class="equalHeight card h-100 border-0">
+                    <div class=" col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class=" card h-100 border-0">
                             {% if product.image %}
                             <a href="{% url 'product_detail' product.id %}">
                                 <img class="card-img-top img-fluid" src="{{ product.image.url }}"
@@ -748,8 +748,8 @@
                 <div class="row mt-1">
                     {% for product in products %}
                     {% if product.category.name == 'coil' %}
-                    <div class="equalHeight col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <div class="equalHeight card h-100 border-0">
+                    <div class=" col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class=" card h-100 border-0">
                             {% if product.image %}
                             <a href="{% url 'product_detail' product.id %}">
                                 <img class="card-img-top img-fluid" src="{{ product.image.url }}"
@@ -836,38 +836,4 @@
         </a>
     </div>
 </section>
-{% endblock %}
-
-{% block postloadjs %}
-{{ block.super }}
-<script type="text/javascript">
-    (function () {
-        equalHeight(false);
-    })();
-
-    window.onresize = function () {
-        equalHeight(true);
-    }
-
-    function equalHeight(resize) {
-        var elements = document.getElementsByClassName("equalHeight"),
-            allHeights = [],
-            i = 0;
-        if (resize === true) {
-            for (i = 0; i < elements.length; i++) {
-                elements[i].style.height = 'auto';
-            }
-        }
-        for (i = 0; i < elements.length; i++) {
-            var elementHeight = elements[i].clientHeight;
-            allHeights.push(elementHeight);
-        }
-        for (i = 0; i < elements.length; i++) {
-            elements[i].style.height = Math.max.apply(Math, allHeights) + 'px';
-            if (resize === false) {
-                elements[i].className = elements[i].className + " show";
-            }
-        }
-    }
-</script>
 {% endblock %}
