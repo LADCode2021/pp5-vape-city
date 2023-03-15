@@ -72,7 +72,13 @@ I tried to create an account with existing email address and it raised an error 
 
 ## CRUD Operation Tests
 
-## Automated Testing
+* Test add product
+
+* Test add category
+
+* Test add flavour variation
+
+*Test add strength variation
 
 ## Remaining Bugs
 

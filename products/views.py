@@ -87,25 +87,34 @@ def add_product(request):
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
 
-    if request.method == 'POST':
+    if request.method == 'POST' and 'slug' in request.POST:
         form = ProductForm(request.POST, request.FILES)
-        form2 = CategoryForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save()
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
-        elif form2.is_valid():
+        else:
+            messages.error(
+                request,
+                'Failed to add product.'
+                'Please ensure the form is valid. '
+                )
+    else:
+        form = ProductForm()
+
+    if request.method == 'POST' and 'friendly_name' in request.POST:
+        form2 = CategoryForm(request.POST, request.FILES)
+        if form2.is_valid():
             category = form2.save()
             messages.success(request, 'Successfully added category!')
             return redirect('.')
         else:
             messages.error(
                 request,
-                'Failed to add product or category.'
+                'Failed to add category. '
                 'Please ensure the form is valid.'
                 )
     else:
-        form = ProductForm()
         form2 = CategoryForm()
 
     template = 'products/add_product.html'
