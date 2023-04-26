@@ -285,8 +285,77 @@ The only exceptions are the webhandler files and settings.py. I chose to leave t
 
 # Deployment
 
-I followed the steps detailed in the Boutique Ado deployment instructions. I have not included these below as it is now a written guide on the LMS.
+I followed the following steps to deploy my project to a live environment:
 
+1. Created new Elephant database
+    1. Logged in to ElephantSQL.com
+    2. Clicked 'Create New Instance'
+    3. Set up the plan
+        * Named the plan after my project
+        * Selected the Tiny Turtle (Free) plan
+        * Left the Tags field blank
+    4. Clicked 'Select Region'
+    5. Selected EU West Ireland as the region
+    6. Clicked 'Review'
+    7. Clicked 'Create New Instance'
+    8. Copied database url to my clipboard
+
+2. Logged into Heroku
+    1. Created new app called: 'PP5 Vape City'
+    2. Selected Europe as my region
+    3. Clicked Settings Tab
+    4. Created a new Config Var called 'DATABASE_URL'
+    5. Pasted my ElephantSQL database url as the value for this Config Var
+
+3. Migrated data to my new ElephantSQL database
+    1. In the terminal in GitPod, I installed dj_database_url and psycopg2,
+    2. Updated my requirements.txt using pip freeze > requirements.txt
+    3. In my settings.py file, pasted import dj_database_url underneath the import for os
+    4. Commented out the connection to sqlite and connected to the new ElephantSQL database instead by pasting in the following code:
+    'DATABASES = {'default': dj_database_url.parse('your-database-url-here')}'
+    5. In the terminal I then typed ‘python3 manage.py migrate’
+    6. Followed by python3 manage.py loaddata categories
+    7. Followed by python3 manage.py loaddata products
+    8. Followed by python3 manage.py createsuperuser
+    9. Followed the steps to create a your superuser username and password.
+    10. I then updated settings.py to collect environment variables either from GitPod if in DEVELOPMENT or from Heroku Config Vars if in the live environment
+4. Installed webserver wirg gunicorn using command (pip3 install gunicorn)
+5. Updated my requirements.txt using pip freeze > requirements.txt
+6. Created a new file: Procfile
+7. Added gunicorn to Procfile
+8. Logged into the Heroku CLI in the terminal using 'heroku login -i'
+    1. I have 2fa turned on so I got my APi from Heroku and pasted that as the password
+    2. Disabled collect static using command: heroku config:set DISABLE_STATIC=1
+9. Added app name (pp5-vape-city) to ALLOWED_HOSTS and 'localhost' in settings.py
+10. Added/Committed/Pushed changes to GitHub
+11. Deployed the site to Heroku using command: 'git push heroku main'
+12. Changed Heroku settings to automatically deploy when changes are pushed to GitHub for future deployments
+    1. Opened my app in Heroku
+    2. Opened the Deploy Tab
+    3. Selected a Deployment Method Option
+    4. Searched for my app and then connected and enable automatic deploys
+13. Generated a Django secretkey using https://djecrety.ir/
+14. Added SECRET_KEY to Config Vars in Heroku
+15. Add 'DEBUG = 'DEVELOPMENT' in os.environ' to settings.py
+16. Added/Committed/Pushed changes to GitHub
+
+# Forking and Cloning from GitHub Docs
+
+## Forking
+
+1. Open GitHub page that hosts the repository you wish to fork.
+2. Find the 'Fork' button at the top right of the page
+3. Once you click the button the fork will be in your repository
+
+## Cloning
+
+1. Open Go to the repository page on Github
+2. click on the green button that says "Code".
+3. You can choose to download a zip file of the repository, unpack it on your local machine, and open it in your IDE.
+4. Copy the URL under the HTTPS tab to clone using https.
+5. In a new window, and set the current directory to the one you want to contain the clone from.
+6. Type git clone and paste the URL copied from the GitHub page.
+7. The repository clone will now be created on your machine.
 
 # Technologies Used
 
