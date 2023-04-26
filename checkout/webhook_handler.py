@@ -5,6 +5,8 @@ from django.conf import settings
 
 from .models import Order, OrderLineItem
 from products.models import Product
+from products.models import Flavour
+from products.models import Strength
 from profiles.models import UserProfile
 
 import json
