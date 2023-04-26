@@ -9,6 +9,8 @@ from .forms import OrderForm
 from .models import Order, OrderLineItem
 
 from products.models import Product
+from products.models import Flavour
+from products.models import Strength
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from basket.contexts import basket_contents
@@ -29,8 +31,9 @@ def cache_checkout_data(request):
         })
         return HttpResponse(status=200)
     except Exception as e:
-        messages.error(request, 'Sorry, your payment cannot be \
-            processed right now. Please try again later.')
+        messages.error(request, ('Sorry, your payment cannot be '
+                                 'processed right now. Please try '
+                                 'again later.'))
         return HttpResponse(content=e, status=400)
 
 
