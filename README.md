@@ -285,7 +285,7 @@ The only exceptions are the webhandler files and settings.py. I chose to leave t
 
 # Deployment
 
-I followed the following steps to deploy my project to a live environment:
+I developed this site in GitPod first being setup from GitPod Chrome extension interacting with GitHub using the Code Institute template. Once at the correct stage I followed the following steps to deploy my project to a production environment (Heroku):
 
 1. Created new Elephant database
     1. Logged in to ElephantSQL.com
@@ -339,7 +339,7 @@ I followed the following steps to deploy my project to a live environment:
 15. Add 'DEBUG = 'DEVELOPMENT' in os.environ' to settings.py
 16. Added/Committed/Pushed changes to GitHub
 
-# Forking and Cloning from GitHub Docs
+To install this site locally I would use the following instructions lifted from GitHub Docs:
 
 ## Forking
 
