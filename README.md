@@ -18,6 +18,21 @@ I finished the majority of my initial issues and also added a couple more. I did
 
 ![](docs/images/to-do-list-finished.png)
 
+I then created a few simple wireframes based on research of existing ecommerce sites such as https://www.vapesuperstore.co.uk/ and what I'd learnt in the Boutique Ado project. I wanted to have a basic idea of structure in my head for especially the homepage. Please see my initial homepage wireframe below.
+
+![](docs/images/homepage-wireframe.png)
+
+This lead me to decide the style of my all products page/the page users could filter by product type mostly because I realised it was not too dissimilar to the homepage minus the banner image:
+
+![](docs/images/product-filter-page.png)
+
+
+At this stage I realised as this was going to be a Django app with a base.html that I didn't need to over-do it on Wireframes because now I knew the basic structure including nav menu and footer I could form the rest of my pages from this initial wireframe. I did create a product detail page wireframe also just so I had an idea of how I would want to structure individual product pages:
+
+![](docs/images/product-detail-page-wireframe.png)
+
+I considered mocking up wireframes for all of my usecases but I didn't feel this was the best use of my time, especially as I wanted to do this project in an iterative agile way. My first sprint was the homepage, followed by product pages and product detail pages. I knew things were likely to change and I'd discover new requirements in my first sprint so I would want to take those requirements into the rest of the pages. This worked really well as a methodology and you can hopefully see that my final site is easily identifiable from my initial wireframes.
+
 # Features
 
 ## Existing Features
