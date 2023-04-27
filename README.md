@@ -159,7 +159,7 @@ I tested all navigation links in both the navbar and inline links and everything
 
 ### Test search
 
-Search only works when on the products url. This was not the case when I first coded it. But it works in some sense. I have included this in remaining bugs.
+Search only worked when on the products url. This was not the case when I first coded it. I discovered in HTML Validation that I had accidentally deleted the action from the form to use the product URL.
 
 ### Contact Form Tests
 
@@ -278,8 +278,6 @@ Something is going wrong on the order.save in the checkout views that is allowin
 
 ## Remaining Bugs
 
-* Search only works when already on the products url.
-
 * There is an error on index.html. I added in last minute a new div to link through to show all products in each category. It broke the forloop counter. On large-xl screens the products are supposed to have 4 columns on each row. After adding an additional div after the forloop counter it pushes one of the products onto the next line. I have a theory on how to fix it but I have run out of time to implement in time for submission. 
 
 * All of the links through to products in each category align with the top of the card when pushed to a new line. If I ever wanted to have more than 4 products to display for each category on the homepage I would need to fix this as it is not good UX. The bug also exists on mobile devices.
@@ -294,9 +292,17 @@ Something is going wrong on the order.save in the checkout views that is allowin
 
 ## Validator Testing
 
+### Python Testing
+
 I validated all views.py, models.py and forms.py from all apps in Code Institute PEP8 Linter (https://pep8ci.herokuapp.com/) and no errors were returned.
 
 The only exceptions are the webhandler files and settings.py. I chose to leave the PEP8 style errors here as they are lifted directly from 3rd parties and errors were introduced when I tried to resolve the errors.
+
+### HTML Testing
+
+I tested all my HTML using W3C HTML Validator (). I found several errors that needed addressing:
+
+![](docs/images/html-validation-errors.png)
 
 # Deployment
 
