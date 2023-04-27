@@ -304,6 +304,10 @@ I tested all my HTML using W3C HTML Validator (). I found several errors that ne
 
 ![](docs/images/html-validation-errors.png)
 
+I resolved all except 3 errors which were false errors. As the base.html template has an include for a mobile-header snippet and thinks that li elements are not within an ul or ol when the validator checks that snippet. However, when rendered that snippet replaces the desktop nav menu snippet and is correctly located within a ul. I there for left those errors unresolved as they didn't actually need resolving. To be doubly sure I checked the Boutique Ado project were I'd adapted the logic from and the li elements are also not withing ul or ol in that snippet also. Here is a screenshot showing all html validation was passed except those 3 errors:
+
+![](docs/images/html-validation-errors-mobile-header.png)
+
 # Deployment
 
 I developed this site in GitPod first being setup from GitPod Chrome extension interacting with GitHub using the Code Institute template. Once at the correct stage I followed the following steps to deploy my project to a production environment (Heroku):
