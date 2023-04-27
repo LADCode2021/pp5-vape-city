@@ -273,8 +273,11 @@ Once I had pushed to GitHub again I still got a checkout success page but the we
 
 The order successfully submits again but once again two orders are created in the database. The webhook is also successful again in Stripe and tells me the order has been created from webhook.
 
-Something is going wrong on the order.save in the checkout views that is allowing it to save the order but then the webhook handler doesn't recognise an order exists.
+I assumed Something was going wrong on the order.save in the checkout views that is allowing it to save the order but then the webhook handler doesn't recognise an order exists.
 
+After several hours on chat with a tutor we discovered I'd made a simple typo in the signals.py file that was duplicating the save order instead of deleting the webhook created order if an order already existed in the database. Orders are now being created successfully in the database. I have included a screenshot below of all the correct orders inside (a badly drawn red box). Below this red box you'll see all the errored order creations (evident by the missing order totals).
+
+![](docs/images/database-order-error-fix.png)
 
 ## Remaining Bugs
 
@@ -287,8 +290,6 @@ Something is going wrong on the order.save in the checkout views that is allowin
 * I discovered in testing the issue with adding categories (described above). The original views.py if statement needs to be corrected in the view for adding variations also. I have run out of time to implement and test this fix. It's not super urgent as the variations will still add. It just throws an error message unnecessarily.
 
 * This is not necessarily a bug but it affects user feedback when removing items with variations from the basket. I had an if condition in the remove_from_basket view that created flavour and strength variables to include in success messages if the user removed an item with a strength/flavour from the basket. However, as mentioned in testing when removing items without variations from the basket I received a internal 500 error. I have a theory on how to fix this so I can include variations in remove messages but I have run out of time to implement and test.
-
-* In the deployed app there is a bug which allows an order to be created twice in the database. It also won't calculate the order total. It works in dev but not on the deployed app. I have run out of time to fix this issue.
 
 ## Validator Testing
 

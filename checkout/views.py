@@ -72,7 +72,7 @@ def checkout(request):
                             product=product,
                             quantity=item_data,
                         )
-                        order_line_item.save() 
+                        order_line_item.save()
                     else:
                         item_data = item_data['items_by_variation'].items()
                         for item, quantity in item_data:
