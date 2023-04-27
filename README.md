@@ -300,13 +300,13 @@ The only exceptions are the webhandler files and settings.py. I chose to leave t
 
 ### HTML Testing
 
-I tested all my HTML using W3C HTML Validator (). I found several errors that needed addressing:
+I tested all my HTML using W3C HTML Validator (https://validator.w3.org/nu/). I tested all pages individually after creating my sitemap.xml which gave me a list of every HTML page. I found several errors that needed addressing which were mostly in index.html but these errors were present on most if not all templates because they all derive from base.html:
 
 ![](docs/images/html-validation-errors.png)
 
-I resolved all except 3 errors which were false errors. As the base.html template has an include for a mobile-header snippet and thinks that li elements are not within an ul or ol when the validator checks that snippet. However, when rendered that snippet replaces the desktop nav menu snippet and is correctly located within a ul. I there for left those errors unresolved as they didn't actually need resolving. To be doubly sure I checked the Boutique Ado project were I'd adapted the logic from and the li elements are also not withing ul or ol in that snippet also. Here is a screenshot showing all html validation was passed except those 3 errors:
+I resolved all errors present across every template. Due to time constraints I didn't address warnings and information on this occasion so I have filtered them out to make the no errors statement clearer from the tool:
 
-![](docs/images/html-validation-errors-mobile-header.png)
+![](docs/images/html-validation-errors-cleared-screenshot.png)
 
 # Deployment
 
